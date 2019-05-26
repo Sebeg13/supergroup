@@ -1,14 +1,10 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.util.*;
 
 class Finder {
     private int numberOfPeople;
 
     void run() {
-        File data = new File("data.txt");
-        HashMap<String, Person> peopleMap = convertFileToPeople(data);
+        HashMap<String, Person> peopleMap = convertInputToPeople();
         ArrayList<HashSet<Person>> friendsSets = createSets(peopleMap);
         HashSet<HashSet<Person>> superGroups = lookForSuperGroups(friendsSets);
 
@@ -162,17 +158,18 @@ class Finder {
         return friendsSets;
     }
 
-    private HashMap<String, Person> convertFileToPeople(File data) {
+    private HashMap<String, Person> convertInputToPeople() {
         HashMap<String, Person> peopleMap = new HashMap<String, Person>();
+
         try {
-            BufferedReader br = new BufferedReader(new FileReader(data));
-            String firstLine = br.readLine();
+            Scanner scanner = new Scanner(System.in);
+            String firstLine = scanner.nextLine();
             String[] firstLineArr = firstLine.split(" ");
             numberOfPeople = Integer.valueOf(firstLineArr[0]);
             int numberOfRelations = Integer.valueOf(firstLineArr[1]);
 
             for (int ii = 0; ii < numberOfRelations; ii++) {
-                String line = br.readLine();
+                String line = scanner.nextLine();
                 String[] lineArr = line.split(" ");
                 String firstPersonString = lineArr[0];
                 String secondPersonString = lineArr[1];
