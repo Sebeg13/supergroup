@@ -1,4 +1,4 @@
-
+package sebastianlauks;
 
 public class Main {
 

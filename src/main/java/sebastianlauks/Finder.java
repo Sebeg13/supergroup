@@ -1,3 +1,5 @@
+package sebastianlauks;
+
 import java.util.*;
 
 class Finder {

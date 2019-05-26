@@ -1,3 +1,5 @@
+package sebastianlauks;
+
 import java.util.HashSet;
 
 public class Person implements Comparable<Person> {
