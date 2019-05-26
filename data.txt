@@ -1,9 +1,0 @@
-7 8
-Ala Ola
-Ola Mirek
-Janek Kasia
-Kasia Ala
-Ala Mirek
-Janek Ala
-Mirek Ela
-Zosia Janek
